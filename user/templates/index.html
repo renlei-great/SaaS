@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css" rel="stylesheet">
+    <style>
+        .account {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="account">
+
+        <h1>注册</h1>
+        <form>
+            {% for field in form %}
+                <p><label for="{{ field.id_for_label }}">{{ field.label }}</label> : {{ field }}</p>
+             {% endfor %}
+            <button type="submit" class="btn btn-primary">注册</button>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+</html>

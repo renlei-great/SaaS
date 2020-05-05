@@ -37,13 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user'  # 注册用户模块
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -120,8 +121,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#--------- SMS 发送短信 ------------------
+SMS_APPID = "66666"
+SMS_APPKEY = "666666"
+SMS_TEMPLATE = {
+    'login': 596948,
+    'register': 596993,
+}
+
+
 # 导入本地配置文件
 try:
-    from .local_settinngs import *
+    from .local_settings import *
 except ImportError:
     pass
+
